@@ -15,4 +15,6 @@ main = do
   args <- map (Array.drop 2) Process.argv
   { options } <-
     Either.either Exception.throw pure (Options.parse args)
-  Console.logShow options
+  if options.help
+    then Console.log Options.help
+    else Console.logShow options
