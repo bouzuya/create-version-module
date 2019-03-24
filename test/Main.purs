@@ -8,8 +8,10 @@ import Effect (Effect)
 import Test.Formatters as Formatters
 import Test.Options as Options
 import Test.Unit.Main as TestUnitMain
+import Test.Version as Version
 
 main :: Effect Unit
 main = TestUnitMain.runTest do
   Formatters.tests
   Options.tests
+  Version.tests
