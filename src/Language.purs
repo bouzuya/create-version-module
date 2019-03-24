@@ -13,10 +13,10 @@ newtype Language = Language String
 derive instance newtypeLanguage :: Newtype Language _
 
 fromString :: String -> Maybe Language
-fromString = case _ of
-  s@"JavaScript" -> Just (Newtype.wrap s)
-  s@"PureScript" -> Just (Newtype.wrap s)
-  s@"TypeScript" -> Just (Newtype.wrap s)
+fromString s = case s of
+  "JavaScript" -> Just (Newtype.wrap s)
+  "PureScript" -> Just (Newtype.wrap s)
+  "TypeScript" -> Just (Newtype.wrap s)
   _ -> Nothing
 
 toString :: Language -> String
