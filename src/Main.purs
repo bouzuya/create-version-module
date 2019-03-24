@@ -15,7 +15,7 @@ import Node.Encoding as Encoding
 import Node.FS.Sync as FS
 import Node.Process as Process
 import Options as Options
-import Version as Version
+import VersionLoader as VersionLoader
 
 main :: Effect Unit
 main = do
@@ -25,7 +25,7 @@ main = do
   if options.help
     then Console.log Options.help
     else do
-      version <- Version.load
+      version <- VersionLoader.load
       content <-
         pure (Formatters.format options.noComment options.language version)
       case Array.head arguments of

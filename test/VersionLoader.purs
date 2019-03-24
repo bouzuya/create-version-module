@@ -1,4 +1,4 @@
-module Test.Version
+module Test.VersionLoader
   ( tests
   ) where
 
@@ -8,6 +8,6 @@ import Test.Unit (TestSuite)
 import Test.Unit as TestUnit
 
 tests :: TestSuite
-tests = TestUnit.suite "Version" do
+tests = TestUnit.suite "VersionLoader" do
   TestUnit.test "TODO" do
     pure unit

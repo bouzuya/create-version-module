@@ -7,7 +7,7 @@ import Prelude
 import Data.Array as Array
 import Data.Newtype as Newtype
 import Partial.Unsafe as Unsafe
-import Version (Version)
+import VersionLoader (Version)
 
 format :: Boolean -> String -> Version -> String
 format noComment "JavaScript" version =

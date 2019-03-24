@@ -1,4 +1,4 @@
-module Version
+module VersionLoader
   ( Version
   , load
   ) where
