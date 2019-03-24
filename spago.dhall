@@ -9,6 +9,7 @@ You can edit this file as you like.
     , "bouzuya-command-line-option-parser"
     , "console"
     , "effect"
+    , "newtype"
     , "node-fs"
     , "node-process"
     , "psci-support"

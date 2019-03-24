@@ -5,6 +5,7 @@ module Test.Formatters
 import Prelude
 
 import Data.Array as Array
+import Data.Newtype as Newtype
 import Formatters as Formatters
 import Test.Unit (TestSuite)
 import Test.Unit as TestUnit
@@ -12,6 +13,7 @@ import Test.Unit.Assert as Assert
 
 tests :: TestSuite
 tests = TestUnit.suite "Formatters" do
+  let v010 = Newtype.wrap "0.1.0"
   TestUnit.test "format (JavaScript)" do
     Assert.equal
       (Array.intercalate
@@ -21,7 +23,7 @@ tests = TestUnit.suite "Formatters" do
         , "export { version };"
         , ""
         ])
-      (Formatters.format false "JavaScript" "0.1.0")
+      (Formatters.format false "JavaScript" v010)
 
     Assert.equal
       (Array.intercalate
@@ -30,7 +32,7 @@ tests = TestUnit.suite "Formatters" do
         , "export { version };"
         , ""
         ])
-      (Formatters.format true "JavaScript" "0.1.0")
+      (Formatters.format true "JavaScript" v010)
 
   TestUnit.test "format (TypeScript)" do
     Assert.equal
@@ -41,7 +43,7 @@ tests = TestUnit.suite "Formatters" do
         , "export { version };"
         , ""
         ])
-      (Formatters.format false "TypeScript" "0.1.0")
+      (Formatters.format false "TypeScript" v010)
 
     Assert.equal
       (Array.intercalate
@@ -50,7 +52,7 @@ tests = TestUnit.suite "Formatters" do
         , "export { version };"
         , ""
         ])
-      (Formatters.format true "TypeScript" "0.1.0")
+      (Formatters.format true "TypeScript" v010)
 
   TestUnit.test "format (PureScript)" do
     Assert.equal
@@ -65,7 +67,7 @@ tests = TestUnit.suite "Formatters" do
         , "version = \"0.1.0\""
         , ""
         ])
-      (Formatters.format false "PureScript" "0.1.0")
+      (Formatters.format false "PureScript" v010)
 
     Assert.equal
       (Array.intercalate
@@ -78,4 +80,4 @@ tests = TestUnit.suite "Formatters" do
         , "version = \"0.1.0\""
         , ""
         ])
-      (Formatters.format true "PureScript" "0.1.0")
+      (Formatters.format true "PureScript" v010)
