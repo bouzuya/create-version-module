@@ -9,8 +9,10 @@ You can edit this file as you like.
     , "bouzuya-command-line-option-parser"
     , "console"
     , "effect"
+    , "node-fs"
     , "node-process"
     , "psci-support"
+    , "simple-json"
     , "test-unit"
     ]
 , packages =
