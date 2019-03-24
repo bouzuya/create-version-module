@@ -19,7 +19,7 @@ help :: String
 help =
   Array.intercalate
     "\n"
-    [ "Usage: create-version-module [options] [file]"
+    [ "Usage: create-version-module [options] [FILE]"
     , ""
     , "Options:"
     , "  -h, --help                display help"
