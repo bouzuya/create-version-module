@@ -1,11 +1,13 @@
-module Test.Main where
+module Test.Main
+  ( main
+  ) where
 
 import Prelude
 
 import Effect (Effect)
-import Effect.Console (log)
+import Test.Options as Options
+import Test.Unit.Main as TestUnitMain
 
 main :: Effect Unit
-main = do
-  log "🍝"
-  log "You should add some tests."
+main = TestUnitMain.runTest do
+  Options.tests
