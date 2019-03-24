@@ -8,6 +8,18 @@ version module generator
 npm init @bouzuya/version-module src/version.js
 ```
 
+or
+
+```
+npx @bouzuya/create-version-module src/version.js
+```
+
+See help.
+
+```
+npx @bouzuya/create-version-module --help
+```
+
 ## Example
 
 ```
