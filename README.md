@@ -5,7 +5,7 @@ version module generator
 ## Usage
 
 ```
-npm init @bouzuya/version-module src/version.ts
+npm init @bouzuya/version-module src/version.js
 ```
 
 ## Example
@@ -14,12 +14,23 @@ npm init @bouzuya/version-module src/version.ts
 $ cat package.json
 { "version": "0.1.0" }
 
-$ # npx @bouzuya/create-version-module --no-comment src/version.ts
-$ npm init @bouzuya/version-module --no-comment src/version.ts
+$ # npx @bouzuya/create-version-module --no-comment src/version.js
+$ npm init @bouzuya/version-module --no-comment src/version.js
 
-$ cat src/version.ts
+$ cat src/version.js
 const version = '0.1.0';
 export { version };
+
+$ # supported languages: JavaScript, PureScript, TypeScript
+$ npm init @bouzuya/version-module --language PureScript --no-comment src/version.purs
+
+$ cat src/version.purs
+module Version
+  ( version
+  ) where
+
+version :: String
+version = "0.1.0"
 
 ```
 
