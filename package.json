@@ -1,0 +1,38 @@
+{
+  "name": "@bouzuya/create-version-module",
+  "description": "version module generator",
+  "version": "0.0.0",
+  "author": {
+    "url": "https://bouzuya.net/",
+    "name": "bouzuya",
+    "email": "m@bouzuya.net"
+  },
+  "bin": "bin/create-version-module",
+  "bugs": {
+    "url": "https://github.com/bouzuya/create-version-module/issues"
+  },
+  "devDependencies": {
+    "purescript": "^0.12.3",
+    "spago": "^0.7.2"
+  },
+  "files": [
+    "bin"
+  ],
+  "homepage": "https://github.com/bouzuya/create-version-module#readme",
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "url": "git+https://github.com/bouzuya/create-version-module.git",
+    "type": "git"
+  },
+  "scripts": {
+    "build": "spago make-module",
+    "docs": "spago docs",
+    "prepare": "npm run build",
+    "purs": "purs",
+    "repl": "spago repl",
+    "spago": "spago",
+    "test": "spago test"
+  }
+}
