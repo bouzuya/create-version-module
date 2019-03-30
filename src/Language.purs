@@ -1,23 +1,25 @@
 module Language
-  ( Language
+  ( Language(..)
   , fromString
   , toString
   ) where
 
 import Data.Maybe (Maybe(..))
-import Data.Newtype (class Newtype)
-import Data.Newtype as Newtype
 
-newtype Language = Language String
-
-derive instance newtypeLanguage :: Newtype Language _
+data Language
+  = JavaScript
+  | PureScript
+  | TypeScript
 
 fromString :: String -> Maybe Language
 fromString s = case s of
-  "JavaScript" -> Just (Newtype.wrap s)
-  "PureScript" -> Just (Newtype.wrap s)
-  "TypeScript" -> Just (Newtype.wrap s)
+  "JavaScript" -> Just JavaScript
+  "PureScript" -> Just PureScript
+  "TypeScript" -> Just TypeScript
   _ -> Nothing
 
 toString :: Language -> String
-toString = Newtype.unwrap
+toString = case _ of
+  JavaScript -> "JavaScript"
+  PureScript -> "PureScript"
+  TypeScript -> "TypeScript"

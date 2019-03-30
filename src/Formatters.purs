@@ -4,14 +4,21 @@ module Formatters
 
 import Prelude
 
-import Data.Array as Array
 import Data.Newtype as Newtype
-import Partial.Unsafe as Unsafe
+import Data.String as String
+import Language (Language)
+import Language as Language
 import VersionLoader (Version)
 
-format :: Boolean -> String -> Version -> String
-format noComment "JavaScript" version =
-  Array.intercalate
+format :: Language -> Boolean -> Version -> String
+format = case _ of
+  Language.JavaScript -> formatJavaScript
+  Language.PureScript -> formatPureScript
+  Language.TypeScript -> formatJavaScript
+
+formatJavaScript :: Boolean -> Version -> String
+formatJavaScript noComment version =
+  String.joinWith
     "\n"
     ( (if noComment
         then []
@@ -20,9 +27,10 @@ format noComment "JavaScript" version =
       , "export { version };"
       , ""
       ])
-format noComment "TypeScript" version = format noComment "JavaScript" version
-format noComment "PureScript" version =
-  Array.intercalate
+
+formatPureScript :: Boolean -> Version -> String
+formatPureScript noComment version =
+  String.joinWith
     "\n"
     ( (if noComment
         then []
@@ -35,4 +43,3 @@ format noComment "PureScript" version =
       , "version = \"" <> (Newtype.unwrap version) <> "\""
       , ""
       ])
-format _ _ _ = Unsafe.unsafeCrashWith "invalid Language"
