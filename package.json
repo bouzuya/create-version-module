@@ -30,7 +30,7 @@
   "scripts": {
     "build": "npm-run-all build:version build:index",
     "build:version": "npx @bouzuya/create-version-module --language PureScript src/Version.purs",
-    "build:index": "spago make-module",
+    "build:index": "spago bundle-module",
     "docs": "spago docs",
     "prepare": "npm run build",
     "purs": "purs",
